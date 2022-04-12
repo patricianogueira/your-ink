@@ -1,9 +1,9 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:your_ink/pages/%20paint_options.dart';
 import 'package:your_ink/utils/custom_colors.dart';
 import 'package:your_ink/utils/strings.dart';
+import 'package:your_ink/utils/text_format.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -18,7 +18,6 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       //backgroundColor: CustomColors.purple,
       body: Container(
         decoration: const BoxDecoration(
@@ -37,10 +36,16 @@ class _LoginState extends State<Login> {
           children: [
             const SizedBox(height: 97.5),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              Image.asset(
+                'assets/bucket.jpg',
+                height: 50,
+                width: 50,
+              ),
               const TextFormat(
                 string: Strings.xtintas,
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
+                color: CustomColors.write,
               )
             ]),
             const SizedBox(
@@ -50,19 +55,24 @@ class _LoginState extends State<Login> {
               string: Strings.getInPlatform,
               fontSize: 22,
               fontWeight: FontWeight.bold,
+              color: CustomColors.write,
             ),
             const SizedBox(height: 37.0),
             const TextFormat(
               string: Strings.email,
               fontSize: 16,
               fontWeight: FontWeight.bold,
+              color: CustomColors.write,
             ),
             const SizedBox(height: 21.0),
             Container(
               width: 348,
               height: 56,
               child: const TextField(
-                decoration: InputDecoration(border: OutlineInputBorder()),
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  hintText: Strings.exampleEmail,
+                ),
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
               ),
@@ -72,6 +82,7 @@ class _LoginState extends State<Login> {
               string: Strings.password,
               fontSize: 16,
               fontWeight: FontWeight.bold,
+              color: CustomColors.write,
             ),
             const SizedBox(height: 21.0),
             Container(
@@ -79,7 +90,9 @@ class _LoginState extends State<Login> {
               height: 56,
               child: TextField(
                 obscureText: obscureText,
-                decoration: const InputDecoration(border: OutlineInputBorder())
+                decoration: const InputDecoration(
+                        border: OutlineInputBorder(),
+                        hintText: Strings.maskedPassword)
                     .copyWith(
                   suffixIcon: IconButton(
                     icon: Icon(
@@ -110,30 +123,14 @@ class _LoginState extends State<Login> {
                   Strings.forgotPassword,
                   style: TextStyle(color: CustomColors.write),
                 ),
-                onTap: () {}),
+                onTap: () {
+                  setState(() {
+                    const PaintOptions();
+                  });
+                }),
           ],
         ),
       ),
     );
-  }
-}
-
-class TextFormat extends StatelessWidget {
-  final string;
-  final fontSize;
-  final fontWeight;
-
-  const TextFormat({Key? key, this.string, this.fontSize, this.fontWeight})
-      : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(string,
-        style: GoogleFonts.openSans(
-          textStyle: Theme.of(context).textTheme.headline4,
-          fontSize: fontSize,
-          color: CustomColors.write,
-          fontWeight: fontWeight,
-        ));
   }
 }
