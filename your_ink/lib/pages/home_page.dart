@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:your_ink/pages/%20how%20_paint.dart';
 import 'package:your_ink/pages/%20paint_options.dart';
 import 'package:your_ink/pages/login_page.dart';
+import 'package:your_ink/pages/rateTheExperience.dart';
 import 'package:your_ink/pages/take_questions.dart';
 
 class HomePage extends StatefulWidget {
@@ -20,10 +21,11 @@ class _HomePageState extends State<HomePage> {
       resizeToAvoidBottomInset: false,
       body:  PageView(
         controller: controller, children: const [
-          Login(),
-          //PaintOptions(),
+          //Login(),
+          PaintOptions(),
           //HowPaint(),
           //TakeQuestions(),
+          //RateTheExperience(),
         ],
       ),
     );
