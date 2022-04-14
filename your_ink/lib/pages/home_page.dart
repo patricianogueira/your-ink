@@ -21,11 +21,11 @@ class _HomePageState extends State<HomePage> {
       resizeToAvoidBottomInset: false,
       body:  PageView(
         controller: controller, children: const [
-          //Login(),
+          Login(),
           PaintOptions(),
-          //HowPaint(),
-          //TakeQuestions(),
-          //RateTheExperience(),
+          HowPaint(),
+          TakeQuestions(),
+          RateTheExperience(),
         ],
       ),
     );

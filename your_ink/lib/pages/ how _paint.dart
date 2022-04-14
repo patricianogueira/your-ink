@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:your_ink/utils/custom_colors.dart';
-import 'package:your_ink/utils/list_paint.dart';
 import 'package:your_ink/utils/strings.dart';
 import 'package:your_ink/utils/text_format.dart';
 
@@ -13,12 +12,15 @@ class HowPaint extends StatelessWidget {
       backgroundColor: CustomColors.grey,
       appBar: AppBar(
         backgroundColor: CustomColors.grey,
-        leading: const Icon(
-          Icons.arrow_back_ios_sharp,
-          color: CustomColors.greyArrow,
+        leading: GestureDetector(
+          child: const Icon(
+            Icons.arrow_back_ios_sharp,
+            color: CustomColors.greyArrow,
+          ),
+          onTap: () {},
         ),
       ),
-      body: ListView(
+      body: Column(
         children: [
           const Center(
             child: TextFormat(
@@ -37,12 +39,13 @@ class HowPaint extends StatelessWidget {
               Row(
                 children: const [
                   Expanded(
-                      child: TextFormat(
-                    string: Strings.one,
-                    fontSize: 31,
-                    color: CustomColors.purple,
-                    fontWeight: FontWeight.bold,
-                  )),
+                    child: TextFormat(
+                      string: Strings.one,
+                      fontSize: 31,
+                      color: CustomColors.purple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Expanded(
                       flex: 2,
                       child: TextFormat(
@@ -50,7 +53,7 @@ class HowPaint extends StatelessWidget {
                         fontSize: 22,
                         color: CustomColors.black,
                         fontWeight: FontWeight.bold,
-                      )),
+                      ),),
                   Expanded(child: Icon(Icons.format_paint)),
                 ],
               ),
@@ -66,20 +69,22 @@ class HowPaint extends StatelessWidget {
               Row(
                 children: const [
                   Expanded(
-                      child: TextFormat(
-                    string: Strings.two,
-                    fontSize: 32,
-                    color: CustomColors.purple,
-                    fontWeight: FontWeight.bold,
-                  )),
+                    child: TextFormat(
+                      string: Strings.two,
+                      fontSize: 32,
+                      color: CustomColors.purple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Expanded(
-                      flex: 2,
-                      child: TextFormat(
-                        string: Strings.howPaint,
-                        fontSize: 22,
-                        color: CustomColors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
+                    flex: 2,
+                    child: TextFormat(
+                      string: Strings.howPaint,
+                      fontSize: 22,
+                      color: CustomColors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Expanded(child: Icon(Icons.format_paint)),
                 ],
               ),
@@ -103,20 +108,22 @@ class HowPaint extends StatelessWidget {
               Row(
                 children: const [
                   Expanded(
-                      child: TextFormat(
-                    string: Strings.tree,
-                    fontSize: 32,
-                    color: CustomColors.purple,
-                    fontWeight: FontWeight.bold,
-                  )),
+                    child: TextFormat(
+                      string: Strings.tree,
+                      fontSize: 32,
+                      color: CustomColors.purple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Expanded(
-                      flex: 2,
-                      child: TextFormat(
-                        string: Strings.passTheInk,
-                        fontSize: 22,
-                        color: CustomColors.black,
-                        fontWeight: FontWeight.bold,
-                      )),
+                    flex: 2,
+                    child: TextFormat(
+                      string: Strings.passTheInk,
+                      fontSize: 22,
+                      color: CustomColors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   Expanded(child: Icon(Icons.format_paint)),
                 ],
               ),

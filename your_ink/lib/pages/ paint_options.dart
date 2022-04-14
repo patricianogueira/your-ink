@@ -11,9 +11,12 @@ class PaintOptions extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColors.greyCard,
       appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_ios_sharp,
-          color: CustomColors.black,
+        leading: GestureDetector(
+          child: const Icon(
+            Icons.arrow_back_ios_sharp,
+            color: CustomColors.black,
+          ),
+          onTap: (){},
         ),
         backgroundColor: CustomColors.greyCard,
       ),
@@ -117,55 +120,67 @@ class PaintOptions extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: TextFormat(
-                        string: Strings.differentials,
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: CustomColors.black,
-                      ),
+              child: Column(children: [
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: TextFormat(
+                    string: Strings.differentials,
+                    fontSize: 14,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColors.black,
+                  ),
+                ),
+                Row(
+                  children: const [
+                    Icon(Icons.brush),
+                    SizedBox(width: 16),
+                    TextFormat(
+                      string: Strings.string1,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: CustomColors.black,
                     ),
-                    Row(
-                      children: const [
-                        Icon(Icons.brush),
-                        SizedBox(width: 16),
-                        TextFormat(
-                          string: Strings.string1,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: CustomColors.black,
-                        ),
-                      ],
+                  ],
+                ),
+                Row(
+                  children: const [
+                    Icon(Icons.auto_awesome_outlined),
+                    SizedBox(width: 16),
+                    TextFormat(
+                      string: Strings.string2,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: CustomColors.black,
                     ),
-                    Row(
-                      children: const [
-                        Icon(Icons.auto_awesome_outlined),
-                        SizedBox(width: 16),
-                        TextFormat(
-                          string: Strings.string2,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: CustomColors.black,
-                        ),
-                      ],
+                  ],
+                ),
+                Row(
+                  children: const [
+                    Icon(Icons.format_paint),
+                    SizedBox(width: 16),
+                    TextFormat(
+                      string: Strings.string3,
+                      fontSize: 14,
+                      fontWeight: FontWeight.normal,
+                      color: CustomColors.black,
                     ),
-                    Row(
-                      children: const [
-                        Icon(Icons.format_paint),
-                        SizedBox(width: 16),
-                        TextFormat(
-                          string: Strings.string3,
-                          fontSize: 14,
-                          fontWeight: FontWeight.normal,
-                          color: CustomColors.black,
-                        ),
-                      ],
-                    ),
-                  ]),
+                  ],
+                ),
+                const SizedBox(height: 32),
+              ]),
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text(
+              Strings.buyHere,
+              style: TextStyle(
+                  color: CustomColors.write, fontWeight: FontWeight.bold),
+            ),
+            style: ElevatedButton.styleFrom(
+              primary: CustomColors.purple,
+              fixedSize: const Size(150, 50),
+              shape: const StadiumBorder(),
             ),
           ),
         ],

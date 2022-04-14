@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
         ),
         child: Column(
           children: [
-            const SizedBox(height: 97.5),
+           // const SizedBox(height: 97.5),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset(
                 'assets/bucket.jpg',
@@ -48,9 +48,9 @@ class _LoginState extends State<Login> {
                 color: CustomColors.write,
               )
             ]),
-            const SizedBox(
-              height: 79,
-            ),
+            // const SizedBox(
+            //   height: 79,
+            // ),
             const TextFormat(
               string: Strings.getInPlatform,
               fontSize: 22,
@@ -66,8 +66,8 @@ class _LoginState extends State<Login> {
             ),
             const SizedBox(height: 21.0),
             Container(
-              width: 348,
-              height: 56,
+              // width: 348,
+              // height: 56,
               child: const TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
