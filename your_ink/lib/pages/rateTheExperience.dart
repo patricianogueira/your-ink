@@ -22,6 +22,7 @@ class RateTheExperience extends StatelessWidget {
             color: CustomColors.greyCard,
             elevation: 3,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
                   height: 15,
@@ -34,24 +35,40 @@ class RateTheExperience extends StatelessWidget {
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
-                      left: 8, right: 8, top: 20, bottom: 20),
+                      left: 8, right: 8, top: 30, bottom: 15),
                   child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // GestureDetector(
-                      //   child: Image.asset('assets/boring.jpg', width: 5, height: 5),
-                      //   onTap: (){},
-                      // ),
-                      // GestureDetector(
-                      //   child: Image.asset('assets/sad.jpg', width: 5, height: 5),
-                      //   onTap: (){},
-                      // ),
-                      // GestureDetector(
-                      //   child: Image.asset('assets/love.jpg', width: 5, height: 5),
-                      //   onTap: (){},
-                      // ),
+                      GestureDetector(
+                        child: Image.asset('assets/boring.jpg', width: 60, height: 60),
+                        onTap: (){},
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 50, right: 50),
+                        child: GestureDetector(
+                          child: Image.asset('assets/sad.jpg', width: 60, height: 60),
+                          onTap: (){},
+                        ),
+                      ),
+                      GestureDetector(
+                        child: Image.asset('assets/love.jpg', width: 60, height: 60),
+                        onTap: (){},
+                      ),
                     ],
                   ),
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const[
+                    Text(Strings.weak),
+                    Padding(
+                      padding: EdgeInsets.only(left: 50, right: 50),
+                      child: Text(Strings.median),
+                    ),
+                    Text(Strings.excellent),
+                  ],
+                ),
+                const SizedBox(height: 24),
                 ElevatedButton(
                   child: const TextFormat(
                     string: Strings.toSend,
