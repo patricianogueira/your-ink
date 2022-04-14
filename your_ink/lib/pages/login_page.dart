@@ -18,89 +18,101 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //backgroundColor: CustomColors.purple,
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              CustomColors.write,
-              CustomColors.purple,
-            ],
-            begin: const FractionalOffset(0.0, 0.0),
-            end: const FractionalOffset(0.0, 0.0),
-            stops: [0.0, 0.0],
-            tileMode: TileMode.clamp,
-          ),
-        ),
-        child: Column(
+      backgroundColor: CustomColors.purple,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 15, right: 15, top: 100),
+        child: ListView(
+          //mainAxisAlignment: MainAxisAlignment.start,
           children: [
-           // const SizedBox(height: 97.5),
-            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Image.asset(
-                'assets/bucket.jpg',
-                height: 50,
-                width: 50,
-              ),
-              const TextFormat(
-                string: Strings.xtintas,
-                fontSize: 48,
+            // const SizedBox(height: 97.5),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/paint.png',
+                  height: 52,
+                  width: 52,
+                ),
+                const Text(
+                  Strings.xtintas,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColors.write,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 70),
+            // const TextFormat(
+            //   string: Strings.getInPlatform,
+            //   fontSize: 22,
+            //   fontWeight: FontWeight.bold,
+            //   color: CustomColors.write,
+            // ),
+            const Text(
+              Strings.getInPlatform,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: CustomColors.write,
-              )
-            ]),
-            // const SizedBox(
-            //   height: 79,
-            // ),
-            const TextFormat(
-              string: Strings.getInPlatform,
-              fontSize: 22,
-              fontWeight: FontWeight.bold,
-              color: CustomColors.write,
-            ),
-            const SizedBox(height: 37.0),
-            const TextFormat(
-              string: Strings.email,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: CustomColors.write,
-            ),
-            const SizedBox(height: 21.0),
-            Container(
-              // width: 348,
-              // height: 56,
-              child: const TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  hintText: Strings.exampleEmail,
-                ),
-                keyboardType: TextInputType.emailAddress,
-                textInputAction: TextInputAction.next,
               ),
             ),
-            const SizedBox(height: 21),
-            const TextFormat(
-              string: Strings.password,
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: CustomColors.write,
+            const SizedBox(height: 37.0),
+            // const TextFormat(
+            //   string: Strings.email,
+            //   fontSize: 16,
+            //   fontWeight: FontWeight.bold,
+            //   color: CustomColors.write,
+            // ),
+            const Text(
+              Strings.email,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: CustomColors.write,
+              ),
             ),
             const SizedBox(height: 21.0),
-            Container(
-              width: 340,
-              height: 56,
-              child: TextField(
-                obscureText: obscureText,
-                decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: Strings.maskedPassword)
-                    .copyWith(
-                  suffixIcon: IconButton(
-                    icon: Icon(
-                        obscureText ? Icons.visibility : Icons.visibility_off),
-                    onPressed: () => setState(() {
-                      obscureText = !obscureText;
-                    }),
-                  ),
+            const TextField(
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: Strings.exampleEmail,
+              ),
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
+              autofocus: false,
+            ),
+            const SizedBox(height: 21),
+            // const TextFormat(
+            //   string: Strings.password,
+            //   fontSize: 16,
+            //   fontWeight: FontWeight.bold,
+            //   color: CustomColors.write,
+            // ),
+            const Text(
+              Strings.password,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: CustomColors.write,
+              ),
+            ),
+            const SizedBox(height: 21.0),
+            TextField(
+              obscureText: obscureText,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: Strings.maskedPassword,
+              ).copyWith(
+                suffixIcon: IconButton(
+                  icon: Icon(
+                      obscureText ? Icons.visibility : Icons.visibility_off),
+                  onPressed: () => setState(() {
+                    obscureText = !obscureText;
+                  }),
                 ),
               ),
             ),
@@ -121,6 +133,7 @@ class _LoginState extends State<Login> {
             InkWell(
                 child: const Text(
                   Strings.forgotPassword,
+                  textAlign: TextAlign.center,
                   style: TextStyle(color: CustomColors.write),
                 ),
                 onTap: () {

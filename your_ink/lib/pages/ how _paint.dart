@@ -11,7 +11,6 @@ class HowPaint extends StatelessWidget {
     return Scaffold(
       backgroundColor: CustomColors.grey,
       appBar: AppBar(
-        backgroundColor: CustomColors.grey,
         leading: GestureDetector(
           child: const Icon(
             Icons.arrow_back_ios_sharp,
@@ -19,123 +18,142 @@ class HowPaint extends StatelessWidget {
           ),
           onTap: () {},
         ),
+        backgroundColor: CustomColors.grey,
       ),
-      body: Column(
-        children: [
-          const Center(
-            child: TextFormat(
-              string: Strings.howPaint,
-              fontSize: 32,
-              color: CustomColors.black,
-              fontWeight: FontWeight.bold,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 40, right: 40),
+        child: Column(
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(top: 15, bottom: 35),
+              child: Text(
+                Strings.howPaint,
+                style: TextStyle(
+                  fontSize: 32,
+                  color: CustomColors.black,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(
-                children: const [
-                  Expanded(
-                    child: TextFormat(
-                      string: Strings.one,
+            Row(
+              children: const [
+                Expanded(
+                  child: Text(
+                    Strings.one,
+                    style: TextStyle(
                       fontSize: 31,
                       color: CustomColors.purple,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(
-                      flex: 2,
-                      child: TextFormat(
-                        string: Strings.firstCoat,
-                        fontSize: 22,
-                        color: CustomColors.black,
-                        fontWeight: FontWeight.bold,
-                      ),),
-                  Expanded(child: Icon(Icons.format_paint)),
-                ],
-              ),
-              const TextFormat(
-                string: Strings.instructionFirstCoat,
-                fontSize: 16,
-                color: CustomColors.black,
-                fontWeight: FontWeight.normal,
-              ),
-              const SizedBox(
-                height: 70,
-              ),
-              Row(
-                children: const [
-                  Expanded(
-                    child: TextFormat(
-                      string: Strings.two,
-                      fontSize: 32,
-                      color: CustomColors.purple,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: TextFormat(
-                      string: Strings.howPaint,
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    Strings.firstCoat,
+                    style: TextStyle(
                       fontSize: 22,
                       color: CustomColors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(child: Icon(Icons.format_paint)),
-                ],
+                ),
+                Expanded(child: Icon(Icons.format_paint)),
+              ],
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 12, bottom: 70),
+              child: Text(
+                Strings.instructionHowPaint,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16,
+                  color: CustomColors.black,
+                  fontWeight: FontWeight.normal,
+                ),
               ),
-              const TextFormat(
-                string: Strings.instructionHowPaint,
-                fontSize: 16,
-                color: CustomColors.black,
-                fontWeight: FontWeight.normal,
-              ),
-              const SizedBox(
-                height: 40,
-              ),
-              const Icon(
-                Icons.arrow_downward_sharp,
-                color: CustomColors.greyArrow,
-                size: 100.0,
-              ),
-              const SizedBox(
-                height: 50,
-              ),
-              Row(
-                children: const [
-                  Expanded(
-                    child: TextFormat(
-                      string: Strings.tree,
+            ),
+            Row(
+              children: const [
+                Expanded(
+                  child: Text(
+                    Strings.two,
+                    style: TextStyle(
                       fontSize: 32,
                       color: CustomColors.purple,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(
-                    flex: 2,
-                    child: TextFormat(
-                      string: Strings.passTheInk,
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    Strings.howPaint,
+                    style: TextStyle(
                       fontSize: 22,
                       color: CustomColors.black,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Expanded(child: Icon(Icons.format_paint)),
-                ],
-              ),
-              const TextFormat(
-                string: Strings.instructionpassTheInk,
+                ),
+                Expanded(child: Icon(Icons.format_paint)),
+              ],
+            ),
+            const Text(
+              Strings.instructionFirstCoat,
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 fontSize: 16,
                 color: CustomColors.black,
                 fontWeight: FontWeight.normal,
               ),
-            ],
-          ),
-        ],
+            ),
+            const SizedBox(height: 40),
+            const Icon(
+              Icons.arrow_downward_sharp,
+              color: CustomColors.greyArrow,
+              size: 100.0,
+            ),
+            const SizedBox(
+              height: 50,
+            ),
+            Row(
+              children: const [
+                Expanded(
+                  child: Text(
+                    Strings.tree,
+                    style: TextStyle(
+                      fontSize: 32,
+                      color: CustomColors.purple,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Text(
+                    Strings.passTheInk,
+                    style: TextStyle(
+                      fontSize: 22,
+                      color: CustomColors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Expanded(child: Icon(Icons.format_paint)),
+              ],
+            ),
+            const Text(
+              Strings.instructionpassTheInk,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 16,
+                color: CustomColors.black,
+                fontWeight: FontWeight.normal,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

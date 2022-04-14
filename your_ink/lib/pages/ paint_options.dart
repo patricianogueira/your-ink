@@ -10,28 +10,34 @@ class PaintOptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.greyCard,
-      appBar: AppBar(
-        leading: GestureDetector(
-          child: const Icon(
-            Icons.arrow_back_ios_sharp,
-            color: CustomColors.black,
-          ),
-          onTap: (){},
-        ),
-        backgroundColor: CustomColors.greyCard,
-      ),
+      // appBar: AppBar(
+      //   leading:
+      //   backgroundColor: CustomColors.greyCard,
+      // ),
       body: ListView(
         children: [
+          SizedBox(
+            height: 10,
+            child: GestureDetector(
+              child: const Icon(
+                Icons.arrow_back_ios_sharp,
+                color: CustomColors.black,
+              ),
+              onTap: () {},
+            ),
+          ),
           const Center(
-            child: TextFormat(
-              string: Strings.paintOptions,
-              fontSize: 32,
-              fontWeight: FontWeight.bold,
-              color: CustomColors.black,
+            child: Text(
+              Strings.paintOptions,
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: CustomColors.black,
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(31.0),
+            padding: const EdgeInsets.only(top: 31, left: 25, right: 25),
             child: Card(
               child: Column(
                 children: [
@@ -61,11 +67,13 @@ class PaintOptions extends StatelessWidget {
                       )
                     ],
                   ),
-                  const TextFormat(
-                    string: Strings.suvinylInk,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColors.black,
+                  const Text(
+                    Strings.suvinylInk,
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.black,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(24.0),
@@ -115,72 +123,95 @@ class PaintOptions extends StatelessWidget {
                   ),
                 ],
               ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:
+                const EdgeInsets.only(top: 5, bottom: 30, left: 25, right: 25),
             child: Card(
-              child: Column(children: [
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: TextFormat(
-                    string: Strings.differentials,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColors.black,
+              child: Column(
+                children: [
+                  const SizedBox(height: 10),
+                  const Text(
+                    Strings.differentials,
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: CustomColors.black,
+                    ),
                   ),
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.brush),
-                    SizedBox(width: 16),
-                    TextFormat(
-                      string: Strings.string1,
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                      color: CustomColors.black,
+                  const SizedBox(height: 12),
+                  Row(
+                    children: const [
+                      Icon(Icons.brush),
+                      SizedBox(width: 16),
+                      Text(
+                        Strings.string1,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: CustomColors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 15, bottom: 15),
+                    child: Row(
+                      children: const [
+                        Icon(Icons.auto_awesome_outlined),
+                        SizedBox(width: 16),
+                        Text(
+                          Strings.string2,
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.normal,
+                            color: CustomColors.black,
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.auto_awesome_outlined),
-                    SizedBox(width: 16),
-                    TextFormat(
-                      string: Strings.string2,
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                      color: CustomColors.black,
-                    ),
-                  ],
-                ),
-                Row(
-                  children: const [
-                    Icon(Icons.format_paint),
-                    SizedBox(width: 16),
-                    TextFormat(
-                      string: Strings.string3,
-                      fontSize: 14,
-                      fontWeight: FontWeight.normal,
-                      color: CustomColors.black,
-                    ),
-                  ],
-                ),
-                const SizedBox(height: 32),
-              ]),
+                  ),
+                  Row(
+                    children: const [
+                      Icon(Icons.format_paint),
+                      SizedBox(width: 16),
+                      Text(
+                        Strings.string3,
+                        style: TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.normal,
+                          color: CustomColors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 25),
+                ],
+              ),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(8),
+              ),
             ),
           ),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text(
-              Strings.buyHere,
-              style: TextStyle(
-                  color: CustomColors.write, fontWeight: FontWeight.bold),
-            ),
-            style: ElevatedButton.styleFrom(
-              primary: CustomColors.purple,
-              fixedSize: const Size(150, 50),
-              shape: const StadiumBorder(),
+          Padding(
+            padding:
+                const EdgeInsets.only(top: 20, bottom: 20, left: 25, right: 25),
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Text(
+                Strings.buyHere,
+                style: TextStyle(
+                    color: CustomColors.write, fontWeight: FontWeight.bold),
+              ),
+              style: ElevatedButton.styleFrom(
+                primary: CustomColors.purple,
+                fixedSize: const Size(150, 50),
+                shape: const StadiumBorder(),
+              ),
             ),
           ),
         ],
