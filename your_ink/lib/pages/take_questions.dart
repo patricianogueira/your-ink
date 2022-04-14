@@ -8,25 +8,28 @@ class TakeQuestions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          width: 360,
-          height: 250,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(9),
-            color: CustomColors.greyCard,
-          ),
-          child: Card(
-            color: CustomColors.greyCard,
-            elevation: 3,
+    return Scaffold(
+      backgroundColor: CustomColors.write,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 260, bottom: 265, left: 10, right: 10),
+        child: Card(
+          color: CustomColors.greyCard,
+          elevation: 3,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 30, bottom: 15),
             child: Column(
               children: [
-                const SizedBox(height: 15,),
-                const TextFormat(string: Strings.takeQuestions, fontSize: 18, fontWeight: FontWeight.bold, color: CustomColors.black,),
+                const Text(
+                  Strings.takeQuestions,
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: CustomColors.black,
+                  ),
+                ),
                 Padding(
-                  padding: EdgeInsets.only(left: 8, right: 8, top: 10, bottom: 15),
+                  padding:
+                      EdgeInsets.only(left: 8, right: 8, top: 20, bottom: 15),
                   child: TextField(
                       maxLines: 4,
                       decoration: InputDecoration(
@@ -37,21 +40,27 @@ class TakeQuestions extends StatelessWidget {
                       )),
                 ),
                 ElevatedButton(
-                  child: const TextFormat(string: Strings.toSend, fontSize: 16, fontWeight: FontWeight.w600, color: CustomColors.write,),
-                  onPressed: (){},
+                  child: const Text(
+                    Strings.toSend,
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                      color: CustomColors.write,
+                    ),
+                  ),
+                  onPressed: () {},
                   style: ElevatedButton.styleFrom(
                     primary: CustomColors.purple,
                     fixedSize: const Size(320, 50),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25)
-                  ),
+                        borderRadius: BorderRadius.circular(25)),
                   ),
                 ),
               ],
             ),
           ),
         ),
-      ],
+      ),
     );
   }
 }

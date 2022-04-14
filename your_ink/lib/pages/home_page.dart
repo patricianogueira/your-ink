@@ -6,7 +6,7 @@ import 'package:your_ink/pages/rateTheExperience.dart';
 import 'package:your_ink/pages/take_questions.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({ Key? key }) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -15,17 +15,17 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    
     final PageController controller = PageController();
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      body:  PageView(
-        controller: controller, children: const [
+      body: PageView(
+        controller: controller,
+        children: const [
           Login(),
           PaintOptions(),
           HowPaint(),
-          TakeQuestions(),
           RateTheExperience(),
+          TakeQuestions(),
         ],
       ),
     );
