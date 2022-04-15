@@ -15,49 +15,47 @@ class TakeQuestions extends StatelessWidget {
         child: Card(
           color: CustomColors.greyCard,
           elevation: 3,
-          child: Padding(
-            padding: const EdgeInsets.only(top: 30, bottom: 15),
-            child: Column(
-              children: [
-                const Text(
-                  Strings.takeQuestions,
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              const Text(
+                Strings.takeQuestions,
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: CustomColors.black,
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.only(left: 8, right: 8, top: 20, bottom: 15),
+                child: TextField(
+                    maxLines: 4,
+                    decoration: InputDecoration(
+                      hintText: Strings.write,
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(6.0),
+                      ),
+                    )),
+              ),
+              ElevatedButton(
+                child: const Text(
+                  Strings.toSend,
                   style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: CustomColors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                    color: CustomColors.write,
                   ),
                 ),
-                Padding(
-                  padding:
-                      EdgeInsets.only(left: 8, right: 8, top: 20, bottom: 15),
-                  child: TextField(
-                      maxLines: 4,
-                      decoration: InputDecoration(
-                        hintText: Strings.write,
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(6.0),
-                        ),
-                      )),
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  primary: CustomColors.purple,
+                  fixedSize: const Size(320, 50),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(25)),
                 ),
-                ElevatedButton(
-                  child: const Text(
-                    Strings.toSend,
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600,
-                      color: CustomColors.write,
-                    ),
-                  ),
-                  onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    primary: CustomColors.purple,
-                    fixedSize: const Size(320, 50),
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(25)),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

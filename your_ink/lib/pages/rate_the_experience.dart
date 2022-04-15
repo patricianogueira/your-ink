@@ -8,13 +8,13 @@ class RateTheExperience extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 260, bottom: 265, left: 10, right: 10),
-      child: Card(
-        color: CustomColors.greyCard,
-        elevation: 3,
-        child: Padding(
-          padding: const EdgeInsets.only(top: 30, bottom: 15),
+    return Scaffold(
+      backgroundColor: CustomColors.write,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 260, bottom: 265, left: 10, right: 10),
+        child: Card(
+          color: CustomColors.greyCard,
+          elevation: 3,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -65,7 +65,7 @@ class RateTheExperience extends StatelessWidget {
                   ],
                 ),
               ),
-
+    
               ElevatedButton(
                 child: const Text(
                   Strings.toSend,

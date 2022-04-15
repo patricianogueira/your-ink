@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:your_ink/core/repositories/api_news.dart';
 import 'package:your_ink/pages/home_page.dart';
 
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
+
+  final api = ApiNews();
+
+  api.getNews();
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,4 +21,6 @@ class MyApp extends StatelessWidget {
       home: HomePage(),
     );
   }
+
+  
 }
