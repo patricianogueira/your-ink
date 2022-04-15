@@ -6,6 +6,7 @@ import 'package:your_ink/utils/text_format.dart';
 class HowPaint extends StatelessWidget {
   const HowPaint({Key? key}) : super(key: key);
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,12 +15,18 @@ class HowPaint extends StatelessWidget {
         leading: GestureDetector(
           child: const Icon(
             Icons.arrow_back_ios_sharp,
-            color: CustomColors.greyArrow,
+            color: CustomColors.black,
           ),
           onTap: () {},
         ),
+        elevation: 0,
         backgroundColor: CustomColors.grey,
       ),
+
+      // leading: BackButton(
+      //   color: CustomColors.greyArrow,
+      //   onPressed: () {},
+
       body: Padding(
         padding: const EdgeInsets.only(left: 40, right: 40),
         child: Column(

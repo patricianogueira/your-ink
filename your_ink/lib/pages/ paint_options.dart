@@ -10,22 +10,19 @@ class PaintOptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.greyCard,
-      // appBar: AppBar(
-      //   leading:
-      //   backgroundColor: CustomColors.greyCard,
-      // ),
+      appBar: AppBar(
+        leading: GestureDetector(
+          child: const Icon(
+            Icons.arrow_back_ios_sharp,
+            color: CustomColors.black,
+          ),
+          onTap: () {},
+        ),
+        elevation: 0,
+        backgroundColor: CustomColors.greyCard,
+      ),
       body: ListView(
         children: [
-          SizedBox(
-            height: 10,
-            child: GestureDetector(
-              child: const Icon(
-                Icons.arrow_back_ios_sharp,
-                color: CustomColors.black,
-              ),
-              onTap: () {},
-            ),
-          ),
           const Center(
             child: Text(
               Strings.paintOptions,
@@ -53,7 +50,7 @@ class PaintOptions extends StatelessWidget {
                         onTap: () {},
                       ),
                       Image.asset(
-                        'assets/tinta.jpg',
+                        'assets/suvinil.png',
                         width: 200,
                         height: 200,
                       ),

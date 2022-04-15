@@ -1,18 +1,22 @@
-// import 'package:flutter/material.dart';
-// import 'package:your_ink/utils/text_format.dart';
+import 'package:flutter/material.dart';
 
-// class ListPaint extends StatelessWidget {
-//   var title;
-//   var titleNumber;
-//   final icon;
-//   const ListPaint({Key? key, this.title, this.icon, this.titleNumber}) : super(key: key);
+class ListPaintComponent extends StatefulWidget {
+  final image;
+  const ListPaintComponent({Key? key, this.image}) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     // return ListTile(
-//       leading: titleNumber,
-//       title: title,
-//       trailing: icon,
-//     );
-//   }
-// }
+  @override
+  State<ListPaintComponent> createState() => _ListPaintComponentState();
+}
+
+class _ListPaintComponentState extends State<ListPaintComponent> {
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: Image.asset(
+        'assets/suvinil.png',
+        width: 200,
+        height: 200,
+      ),
+    );
+  }
+}
