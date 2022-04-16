@@ -8,7 +8,7 @@ void main() {
 
   final api = ApiNews();
 
-  api.getNews();
+  api.postQuestionNews();
 }
 
 class MyApp extends StatelessWidget {

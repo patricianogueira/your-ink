@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter/foundation.dart';
 
 class RateModel {
-  final int rating;
+  final String rating;
 
   RateModel({required this.rating});
 
