@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:your_ink/core/repositories/api_news.dart';
-import 'package:your_ink/pages/home_page.dart';
+import 'package:your_ink/features/home_page.dart';
+
 
 
 void main() {
   runApp(MyApp());
 
-  final api = ApiNews();
+  //  final api = ApiNews();
 
-  api.postQuestionNews();
+  //  api.getNews();
 }
 
 class MyApp extends StatelessWidget {

@@ -7,8 +7,8 @@ import 'package:your_ink/core/models/paint_model.dart';
 class ApiNews {
   final route = 'paints';
   final routeLogin = 'login';
-  final routeRate= 'rate';
-  final routeQuestion= 'question';
+  final routeRate = 'rate';
+  final routeQuestion = 'question';
   final _path = 'https://62546fae19bc53e2347e8008.mockapi.io';
 
   //recupera os dados dessa modelagem
@@ -18,14 +18,15 @@ class ApiNews {
 
     try {
       if (response.statusCode == 200) {
-        final decodeJson = jsonDecode(response.body);
+        final decodeJson = jsonDecode(response.body) as Map;
+        print(decodeJson.values);
+        //final benefitsList = decodeJson['data'] as List;
 
-        final benefitsList = decodeJson['data'] as List;
-
-        return benefitsList
-            .map((benefit) => PaintModel.fromJson(benefit))
+        return decodeJson.values
+            .map<PaintModel>((benefit) => PaintModel.fromJson(benefit))
             .toList();
       }
+      //print(response.body);
       return [];
     } catch (error) {
       throw Exception(error);
@@ -85,7 +86,7 @@ class ApiNews {
           'question': 'A tinta de secagem rápida é fácil de limpar?',
         },
       );
-      print(response.body);
+      //print(response.body);
       return [];
     } catch (error) {
       throw Exception(error);

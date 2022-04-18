@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:your_ink/utils/custom_colors.dart';
 import 'package:your_ink/utils/strings.dart';
-import 'package:your_ink/utils/text_format.dart';
 
 class RateTheExperience extends StatelessWidget {
   const RateTheExperience({Key? key}) : super(key: key);
