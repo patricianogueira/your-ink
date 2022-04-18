@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:your_ink/pages/%20paint_options.dart';
 import 'package:your_ink/utils/custom_colors.dart';
 import 'package:your_ink/utils/strings.dart';
-import 'package:your_ink/utils/text_format.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -137,9 +134,7 @@ class _LoginState extends State<Login> {
                   style: TextStyle(color: CustomColors.write),
                 ),
                 onTap: () {
-                  setState(() {
-                    const PaintOptions();
-                  });
+                  
                 }),
           ],
         ),
